@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import numpy as np
-from typing import Dict, Sequence, Any
+from typing import Dict, Sequence, Hashable
 
 
 class FeaturePool:
@@ -17,7 +17,7 @@ class FeaturePool:
     """
 
     def __init__(self,
-                 query_dict: Dict[Any, Sequence[int]],
+                 query_dict: Dict[Hashable, Sequence[int]],
                  feature_table: np.ndarray,
                  ) -> None:
         assert feature_table.ndim == 2

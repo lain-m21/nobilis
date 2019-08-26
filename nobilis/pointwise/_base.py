@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Dict, Sequence, Any
+from typing import Dict, Sequence, Hashable
 import numpy as np
 from nobilis.feature_pool import FeaturePool
 
@@ -14,8 +14,8 @@ class BasePointwiseRanker:
         pass
 
     def fit(self,
-            train_query: Sequence[Any],
-            target: Dict[Any, np.ndarray],
+            train_query: Sequence[Hashable],
+            target: Dict[Hashable, np.ndarray],
             pool: FeaturePool) -> None:
         """
         function for fitting. 

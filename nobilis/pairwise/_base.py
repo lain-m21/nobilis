@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Dict, Sequence, Any, Tuple
+from typing import Dict, Sequence, Hashable, Tuple
 from nobilis.feature_pool import FeaturePool
 
 
@@ -13,8 +13,8 @@ class BasePairwiseRanker:
         pass
 
     def fit(self,
-            train_query: Sequence[Any],
-            target: Dict[Any, Sequence[Tuple[int, int]]],
+            train_query: Sequence[Hashable],
+            target: Dict[Hashable, Sequence[Tuple[int, int]]],
             pool: FeaturePool) -> None:
         """
         function for fitting. 
